@@ -1,0 +1,66 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-image: url('https://img.freepik.com/vector-gratis/diseno-plantilla-papel-tapiz-medica-abstracta_53876-61802.jpg?w=900&t=st=1704901895~exp=1704902495~hmac=283f7ad1d7c832b020f734fac886f04f184d1050593f179e92a069996c603539');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  height: 50px; /* Adjust the size as needed */
+}
+
+.login-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.forgot-password {
+  text-align: right;
+  font-size: 0.9em;
+  margin-bottom: 20px;
+}
+
+.login-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.login-form button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+.login-form button[type="button"] {
+  background-color: #6c757d;
+  color: white;
+}

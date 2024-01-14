@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Paciente</title>
+  <link rel="stylesheet" href="../css/DashboardPaciente.css">
+</head>
+<body>
+<nav class="navbar">
+  <ul>
+    <li><a href="HomePage.html">Inicio</a></li>
+    <li><a href="PerfilPaciente.html">Perfil</a></li>
+    <li><a href="/notificaciones">Notificaciones</a></li>
+    <li><a href="/ayuda">Ayuda</a></li>
+    <li><a href="/contacto">Contacto</a></li>
+  </ul>
+</nav>
+<div class="dashboard-container">
+  <aside class="dashboard-sidebar">
+    <img src="https://img.freepik.com/vector-gratis/antecedentes-medicos-limpios_53876-101048.jpg?w=360&t=st=1704903379~exp=1704903979~hmac=7230014ac1c09fae3771cdd3c0c6f9e6ac2c12e8c3e92bc4991c8ef0659a1c94" alt="Imagen Salud">
+  </aside>
+
+
+  <div class="dashboard-main">
+    <h1>BIENVENIDO/A</h1>
+    <div class="dashboard-options">
+      <button type="button" id="tomaCitaBtn">Toma de Cita</button>
+      <button type="button" id="revisarCitaBtn">Revisar Citas</button>
+      <button type="button" id="anularCitaBtn">Anular o modificar cita</button>
+    </div>
+  </div>
+</div>
+<script>
+  document.getElementById('tomaCitaBtn').addEventListener('click', function() {
+    window.location.href = 'ProgramarCita.html'; // Asegúrate de que el nombre del archivo sea correcto
+  });
+</script>
+<script>
+  document.getElementById('revisarCitaBtn').addEventListener('click', function() {
+    window.location.href = 'CitasTomadas.html'; // Asegúrate de que el nombre del archivo sea correcto
+  });
+</script>
+<script>
+  document.getElementById('anularCitaBtn').addEventListener('click', function() {
+    window.location.href = 'RevisarCita.html'; // Asegúrate de que el nombre del archivo sea correcto
+  });
+</script>
+</body>
+</html>

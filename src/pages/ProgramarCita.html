@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programar Cita</title>
+  <link rel="stylesheet" href="../css/ProgramarCita.css">
+</head>
+<body>
+<nav class="navbar">
+  <ul>
+    <li><a href="HomePage.html">Inicio</a></li>
+    <li><a href="/perfil">Perfil</a></li>
+    <li><a href="/notificaciones">Notificaciones</a></li>
+    <li><a href="/ayuda">Ayuda</a></li>
+    <li><a href="/contacto">Contacto</a></li>
+  </ul>
+</nav>
+<div class="dashboard-container">
+  <aside class="sidebar">
+
+  </aside>
+  <div class="cita-medica">
+    <h2>CITA MÉDICA</h2>
+    <form id="form-cita-medica">
+      <label for="especialista">Especialista</label>
+      <select id="especialista" name="especialista">
+        <option value="dr_Gonzalez">Dr. Gonzalez (Cardiologo)</option>
+        <option value="dr_Rodriguez">Dr. Rodriguez (Broncopulmonar)</option>
+        <option value="dr_Smith">Dr. Smith (Medicina General)</option>
+      </select>
+      <label for="fecha">Fecha
+        <input type="date" id="fecha" name="fecha">
+      </label>
+      <label for="hora">Hora
+        <select id="hora" name="hora">
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+        </select>
+      </label>
+      <div class="acciones">
+        <button type="button" id="confirmarCitaBtn">Confirmar</button>
+        <button type="button" onclick="volver()">Cancelar</button>
+      </div>
+      <script>
+        document.getElementById('confirmarCitaBtn').addEventListener('click', function() {
+          window.location.href = 'ConfirmacionCita.html';
+        });
+      </script>
+    </form>
+  </div>
+</div>
+
+<script>
+  function volver() {
+    window.location.href = 'DashboardPaciente.html';
+  }
+</script>
+
+</body>
+</html>

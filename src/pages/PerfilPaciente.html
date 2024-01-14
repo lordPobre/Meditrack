@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil del Paciente</title>
+  <link rel="stylesheet" href="../css/PerfilPaciente.css">
+</head>
+<body>
+<nav class="navbar">
+  <ul>
+    <li><a href="HomePage.html">Inicio</a></li>
+    <li><a href="/perfil">Perfil</a></li>
+    <li><a href="/notificaciones">Notificaciones</a></li>
+    <li><a href="/ayuda">Ayuda</a></li>
+    <li><a href="/contacto">Contacto</a></li>
+  </ul>
+</nav>
+<div class="perfil-container">
+  <div class="perfil-header">
+    <h2>PERFIL</h2>
+  </div>
+  <form class="perfil-form">
+    <!-- Campos del formulario -->
+    <label>NOMBRES<input type="text" placeholder="Juan Pablo"/></label>
+    <label>APELLIDOS<input type="text" placeholder="Gonzalez Escobar"/></label>
+    <label>FECHA DE NACIMIENTO<input type="date"/></label>
+    <label>RUT<input type="text" placeholder="12345678-9"/></label>
+    <label>EMAIL<input type="email" placeholder="email@example.com"/></label>
+    <div class="perfil-buttons">
+      <button type="submit">Guardar</button>
+      <button type="button">Modificar</button>
+      <button type="button" onclick="volver()">Volver</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  function volver() {
+    window.location.href = 'DashboardPaciente.html';
+  }
+</script>
+</body>
+</html>
+

@@ -1,0 +1,73 @@
+body, html {
+  margin: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar li {
+  padding: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #aaa;
+}
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+.dashboard-sidebar {
+  flex-basis: 20%;
+  background-image: url('https://img.freepik.com/vector-gratis/antecedentes-medicos-limpios_53876-101048.jpg?w=360&t=st=1704903379~exp=1704903979~hmac=7230014ac1c09fae3771cdd3c0c6f9e6ac2c12e8c3e92bc4991c8ef0659a1c94');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.dashboard-main {
+  flex-grow: 1;
+  padding: 20px;
+  background: #fff; /* O el color de fondo que prefieras */
+}
+
+.dashboard-main h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-options button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.dashboard-options button:hover {
+  background-color: #333;
+}

@@ -1,0 +1,49 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.banner {
+  background: url('https://img.freepik.com/vector-premium/fondo-banner-medico-abstracto-diseno-plantillas-concepto-e-idea-tecnologia-sanitaria-medicina-innovacion-salud-ciencia-e-investigacion-encabezado-sitio-web-patron-medico-o-banner-web_181182-15643.jpg?w=1380') no-repeat center center;
+  background-size: cover;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50%;
+}
+
+.login-option span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.side-image {
+  background: url('https://img.freepik.com/vector-gratis/antecedentes-medicos-limpios_53876-101048.jpg?w=360&t=st=1704903379~exp=1704903979~hmac=7230014ac1c09fae3771cdd3c0c6f9e6ac2c12e8c3e92bc4991c8ef0659a1c94') no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  border: none;
+}
+
+button:hover {
+  background-color: #444;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="../Meditrackk/src/css/HomePage.css">
+</head>
+<body>
+
+<div class="banner">
+
+  <h1>Hola, ¿qué necesitas?</h1>
+</div>
+
+<div class="login-options">
+  <div class="login-option">
+    <span>Paciente</span>
+    <button type="button" id="loginPacienteBtn">Login</button>
+  </div>
+  <div class="login-option">
+    <span>Médico</span>
+    <button type="button" id="loginMedicoBtn">Login</button>
+  </div>
+  <div class="login-option">
+    <span>Administrativo</span>
+    <button onclick="location.href='/login/administrativo';">Login</button>
+  </div>
+</div>
+
+<div class="side-image">
+
+</div>
+<script>
+  document.getElementById('loginPacienteBtn').addEventListener('click', function() {
+    window.location.href = 'LoginPaciente.html'; // Asegúrate de que el nombre del archivo sea correcto
+  });
+</script>
+<script>
+  document.getElementById('loginMedicoBtn').addEventListener('click', function() {
+    window.location.href = 'LoginMedico.html'; // Asegúrate de que el nombre del archivo sea correcto
+  });
+</script>
+</body>
+</html>

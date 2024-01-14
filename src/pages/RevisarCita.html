@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revisar Citas</title>
+  <link rel="stylesheet" href="../css/RevisarCita.css">
+</head>
+<body>
+<nav class="navbar">
+  <ul>
+    <li><a href="HomePage.html">Inicio</a></li>
+    <li><a href="/perfil">Perfil</a></li>
+    <li><a href="/notificaciones">Notificaciones</a></li>
+    <li><a href="/ayuda">Ayuda</a></li>
+    <li><a href="/contacto">Contacto</a></li>
+  </ul>
+</nav>
+<div class="dashboard-container">
+  <aside class="sidebar">
+
+  </aside>
+<div class="revisar-citas-container">
+  <h2>Modificar Citas</h2>
+  <div class="lista-citas">
+    <div class="cita">
+      <span class="nombre-especialista">Dr. Enrique Wegman</span>
+      <button class="btn-anular">Anular</button>
+      <button class="btn-modificar">Modificar</button>
+    </div>
+    <div class="cita">
+      <span class="nombre-especialista">Dra. Adriana Molina</span>
+      <button class="btn-anular">Anular</button>
+      <button class="btn-modificar">Modificar</button>
+    </div>
+  </div>
+  <button type="button" onclick="volver()">Volver</button>
+</div>
+</div>
+</body>
+<script>
+  function volver() {
+    window.location.href = 'DashboardPaciente.html';
+  }
+</script>
+</html>
+

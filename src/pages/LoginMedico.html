@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Medico - MediTrack</title>
+  <link rel="stylesheet" href="../css/LoginMedico.css">
+</head>
+<body>
+<div class="login-container">
+  <header>
+    <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/029/525/datas/original.png" alt="MediTrack Logo" class="logo">
+  </header>
+  <div class="login-form">
+    <h1>Medico</h1>
+    <form action="../pages/DashboardMedico.html" method="post">
+      <input type="text" name="username" required>
+      <input type="password" name="password" required>
+      <div class="forgot-password">¿Olvidaste tu contraseña?</div>
+      <button type="submit">Entrar</button>
+      <button id="volverBtn">Volver</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById('volverBtn').addEventListener('click', function() {
+      window.location.href = 'HomePage.html'; // Asegúrate de que la URL sea correcta para tu página de inicio
+    });
+  </script>
+</div>
+</body>
+</html>

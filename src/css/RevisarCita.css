@@ -1,0 +1,102 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar li {
+  padding: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.sidebar {
+  width: 25%;
+  background-image: url('https://img.freepik.com/vector-gratis/antecedentes-medicos-limpios_53876-101048.jpg?w=360&t=st=1704903379~exp=1704903979~hmac=7230014ac1c09fae3771cdd3c0c6f9e6ac2c12e8c3e92bc4991c8ef0659a1c94');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.revisar-citas-container {
+  flex-grow: 1;
+  margin-top: -600px;
+  text-align: center;
+}
+.lista-citas {
+  display: inline-block;
+  text-align: left;
+}
+
+.cita {
+  margin-bottom: 50px;
+}
+
+.cita-item {
+  border-bottom: 1px solid #ccc;
+  padding:40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cita-info {
+  flex-grow: 1;
+}
+
+.btn {
+  padding: 5px 15px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button {
+  padding: 10px 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #e7e7e7;
+}
+.btn-anular {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.btn-modificar {
+  background-color: #48dbfb;
+  color: white;
+}
+
+.btn-volver {
+  align-self: center;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

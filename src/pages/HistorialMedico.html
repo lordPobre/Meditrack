@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Historial Médico</title>
+  <link rel="stylesheet" href="../css/HistorialMedico.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <ul>
+    <li><a href="HomePage.html">Inicio</a></li>
+    <li><a href="PerfilPaciente.html">Perfil</a></li>
+    <li><a href="/notificaciones">Notificaciones</a></li>
+    <li><a href="/ayuda">Ayuda</a></li>
+    <li><a href="/contacto">Contacto</a></li>
+  </ul>
+</nav>
+<div class="container">
+  <div class="sidebar">
+    <img src="https://img.freepik.com/vector-gratis/antecedentes-medicos-limpios_53876-101048.jpg?w=360&t=st=1704903379~exp=1704903979~hmac=7230014ac1c09fae3771cdd3c0c6f9e6ac2c12e8c3e92bc4991c8ef0659a1c94" alt="Imagen Decorativa">
+  </div>
+<div class="main-container">
+  <h1>Historial Médico</h1>
+  <div class="historial-list">
+    <!-- Elementos de historial médico -->
+    <div class="historial-item">
+      <h2>Jose Pérez Gonzalez</h2>
+      <label>
+        <textarea name="detalles" rows="4" cols="50">Escribe los detalles aquí...</textarea>
+      </label>
+    </div>
+    <div class="historial-item">
+      <h2>Irene Suarez</h2>
+      <label>
+        <textarea name="detalles" rows="4" cols="50">Escribe los detalles aquí...</textarea>
+      </label>
+    </div>
+    <button type="button" onclick="volver()">Volver</button>
+  </div>
+</div>
+</div>
+<script>
+  function volver() {
+    window.location.href = 'DashboardMedico.html';
+  }
+</script>
+</body>
+</html>

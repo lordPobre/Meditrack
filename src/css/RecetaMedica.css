@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar li {
+  padding: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 25%;
+  background-image: url('https://img.freepik.com/vector-gratis/antecedentes-medicos-limpios_53876-101048.jpg?w=360&t=st=1704903379~exp=1704903979~hmac=7230014ac1c09fae3771cdd3c0c6f9e6ac2c12e8c3e92bc4991c8ef0659a1c94');
+  background-size: cover;
+  background-position: center;
+}
+
+.content {
+  flex: 3;
+  padding: 20px;
+}
+
+.receta-item {
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: 100%; /* Se ajusta al contenedor */
+  height: 150px; /* Altura fija o puedes usar 'height: auto;' para que crezca con el contenido */
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e7e7e7;
+}
+

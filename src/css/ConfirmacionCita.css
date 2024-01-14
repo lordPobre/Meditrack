@@ -1,0 +1,40 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmacion-container {
+  text-align: center;
+}
+
+.mensaje-exito {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.checkmark-icon {
+  font-size: 50px;
+  color: green;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
