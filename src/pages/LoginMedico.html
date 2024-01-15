@@ -13,9 +13,9 @@
   </header>
   <div class="login-form">
     <h1>Medico</h1>
-    <form action="../pages/DashboardMedico.html" method="post">
-      <input type="text" name="username" required>
-      <input type="password" name="password" required>
+    <form action="../pages/DashboardMedico.html" method="post" id="loginForm">
+      <input type="text" name="username" required placeholder="Username">
+      <input type="password" name="password" required placeholder="Password">
       <div class="forgot-password">¿Olvidaste tu contraseña?</div>
       <button type="submit">Entrar</button>
       <button id="volverBtn">Volver</button>
@@ -23,7 +23,27 @@
   </div>
   <script>
     document.getElementById('volverBtn').addEventListener('click', function() {
-      window.location.href = 'HomePage.html'; // Asegúrate de que la URL sea correcta para tu página de inicio
+      window.location.href = 'HomePage.html';
+    });
+  </script>
+  <script>
+    const validUser = {
+      username: 'eduardgonz',
+      password: 'medicinainterna36.'
+    };
+
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(event.target);
+      const username = formData.get('username');
+      const password = formData.get('password');
+
+      if (username === validUser.username && password === validUser.password) {
+        window.location.href = '../pages/DashboardMedico.html';
+      } else {
+        alert('Invalid username or password');
+      }
     });
   </script>
 </div>

@@ -22,40 +22,48 @@
   </aside>
   <div class="cita-medica">
     <h2>CITA MÉDICA</h2>
-    <form id="form-cita-medica">
+    <form id="form-cita-medica" novalidate>
       <label for="especialista">Especialista</label>
-      <select id="especialista" name="especialista">
+      <select id="especialista" name="especialista" required>
         <option value="dr_Gonzalez">Dr. Gonzalez (Cardiologo)</option>
         <option value="dr_Rodriguez">Dr. Rodriguez (Broncopulmonar)</option>
         <option value="dr_Smith">Dr. Smith (Medicina General)</option>
       </select>
       <label for="fecha">Fecha
-        <input type="date" id="fecha" name="fecha">
+        <input type="date" id="fecha" name="fecha" required>
       </label>
       <label for="hora">Hora
-        <select id="hora" name="hora">
+        <select id="hora" name="hora" required>
           <option value="14:00">14:00</option>
           <option value="15:00">15:00</option>
           <option value="16:00">16:00</option>
         </select>
       </label>
       <div class="acciones">
-        <button type="button" id="confirmarCitaBtn">Confirmar</button>
+        <button type="submit" id="confirmarCitaBtn">Confirmar</button>
         <button type="button" onclick="volver()">Cancelar</button>
       </div>
-      <script>
-        document.getElementById('confirmarCitaBtn').addEventListener('click', function() {
-          window.location.href = 'ConfirmacionCita.html';
-        });
-      </script>
     </form>
   </div>
 </div>
+
+
 
 <script>
   function volver() {
     window.location.href = 'DashboardPaciente.html';
   }
+
+  document.getElementById('form-cita-medica').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    if (form.checkValidity()) {
+      window.location.href = 'ConfirmacionCita.html';
+    } else {
+      alert('Por favor, complete todos los campos.');
+    }
+  });
 </script>
 
 </body>

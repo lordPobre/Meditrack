@@ -13,13 +13,9 @@
   </header>
   <div class="login-form">
     <h1>Paciente</h1>
-    <form action="../pages/DashboardPaciente.html" method="post">
-      <label>
-        <input type="text" name="username" required>
-      </label>
-      <label>
-        <input type="password" name="password" required>
-      </label>
+    <form action="../pages/DashboardPaciente.html" method="post" id="loginForm">
+      <input type="text" name="username" required placeholder="Username">
+      <input type="password" name="password" required placeholder="Password">
       <div class="forgot-password">¿Olvidaste tu contraseña?</div>
       <button type="submit">Entrar</button>
       <button id="volverBtn">Volver</button>
@@ -30,6 +26,26 @@
       window.location.href = 'HomePage.html';
     });
   </script>
+  <script>
+    const validUser = {
+      username: 'patlopez',
+      password: 'houseofthedragon28#'
+    };
+
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(event.target);
+      const username = formData.get('username');
+      const password = formData.get('password');
+
+      if (username === validUser.username && password === validUser.password) {
+        window.location.href = '../pages/DashboardPaciente.html';
+      } else {
+        alert('Invalid username or password');
+      }
+    });
+    </script>
 </div>
 </body>
 </html>
