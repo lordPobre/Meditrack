@@ -53,7 +53,7 @@ body {
   flex-direction: column;
 }
 
-/* Estilos para la lista de citas */
+
 .cita-item {
   border-bottom: 1px solid #ddd;
   padding: 10px;
@@ -62,7 +62,7 @@ body {
   align-items: center;
 }
 
-/* Botones para anular y modificar */
+
 .btn-anular, .btn-modificar {
   padding: 5px 10px;
   border: none;
