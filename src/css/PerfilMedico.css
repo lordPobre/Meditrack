@@ -1,0 +1,75 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar li {
+  padding: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #aaa;
+}
+.perfil-container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.perfil-header h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.perfil-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.perfil-form label {
+  margin-bottom: 10px;
+}
+
+.perfil-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.perfil-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.perfil-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
