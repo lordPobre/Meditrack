@@ -92,11 +92,11 @@ body, html {
 }
 
 .acciones button[type="submit"] {
-  background-color: #4CAF50; /* Verde */
+  background-color: #4CAF50; 
   color: white;
 }
 
 .acciones button[type="button"] {
-  background-color: #f44336; /* Rojo */
+  background-color: #f44336; 
   color: white;
 }
