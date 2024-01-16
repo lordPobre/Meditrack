@@ -40,7 +40,7 @@ body {
 }
 
 .sidebar {
-  flex: 1; /* Ajusta la proporción según necesites */
+  flex: 1; 
   background-image: url('https://img.freepik.com/vector-gratis/antecedentes-medicos-limpios_53876-101048.jpg?w=360&t=st=1704903379~exp=1704903979~hmac=7230014ac1c09fae3771cdd3c0c6f9e6ac2c12e8c3e92bc4991c8ef0659a1c94');
   background-size: cover;
   background-position: center;
