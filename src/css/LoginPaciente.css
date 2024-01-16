@@ -21,7 +21,7 @@ body, html {
 header .logo {
   display: block;
   margin: 0 auto 20px auto;
-  height: 50px; /* Adjust the size as needed */
+  height: 50px; 
 }
 
 .login-form h1 {
