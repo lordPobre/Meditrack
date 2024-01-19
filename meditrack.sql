@@ -16,146 +16,172 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `citas`
+-- Table structure for table `administrativo`
 --
 
-DROP TABLE IF EXISTS `citas`;
+DROP TABLE IF EXISTS `administrativo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `citas` (
-  `CitaID` int NOT NULL AUTO_INCREMENT,
-  `FechaHora` datetime NOT NULL,
+CREATE TABLE `administrativo` (
+  `SecretarioID` int NOT NULL,
+  `Nombre` varchar(50) DEFAULT NULL,
+  `Apellido` varchar(50) DEFAULT NULL,
+  `Teléfono` varchar(20) DEFAULT NULL,
+  `Email` varchar(100) DEFAULT NULL,
+  `UsuarioID` int DEFAULT NULL,
+  PRIMARY KEY (`SecretarioID`),
+  KEY `UsuarioID` (`UsuarioID`),
+  CONSTRAINT `administrativo_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `usuario` (`UsuarioID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `administrativo`
+--
+
+LOCK TABLES `administrativo` WRITE;
+/*!40000 ALTER TABLE `administrativo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `administrativo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cita`
+--
+
+DROP TABLE IF EXISTS `cita`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cita` (
+  `CitaID` int NOT NULL,
+  `FechaCita` date DEFAULT NULL,
+  `HoraCita` time DEFAULT NULL,
   `PacienteID` int DEFAULT NULL,
   `MedicoID` int DEFAULT NULL,
-  `Notas` text,
+  `SecretarioID` int DEFAULT NULL,
   PRIMARY KEY (`CitaID`),
   KEY `PacienteID` (`PacienteID`),
   KEY `MedicoID` (`MedicoID`),
-  CONSTRAINT `citas_ibfk_1` FOREIGN KEY (`PacienteID`) REFERENCES `pacientes` (`PacienteID`),
-  CONSTRAINT `citas_ibfk_2` FOREIGN KEY (`MedicoID`) REFERENCES `medicos` (`MedicoID`)
+  KEY `SecretarioID` (`SecretarioID`),
+  CONSTRAINT `cita_ibfk_1` FOREIGN KEY (`PacienteID`) REFERENCES `paciente` (`PacienteID`),
+  CONSTRAINT `cita_ibfk_2` FOREIGN KEY (`MedicoID`) REFERENCES `medico` (`MedicoID`),
+  CONSTRAINT `cita_ibfk_3` FOREIGN KEY (`SecretarioID`) REFERENCES `administrativo` (`SecretarioID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `citas`
+-- Dumping data for table `cita`
 --
 
-LOCK TABLES `citas` WRITE;
-/*!40000 ALTER TABLE `citas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `citas` ENABLE KEYS */;
+LOCK TABLES `cita` WRITE;
+/*!40000 ALTER TABLE `cita` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cita` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `medicos`
+-- Table structure for table `historial_medico`
 --
 
-DROP TABLE IF EXISTS `medicos`;
+DROP TABLE IF EXISTS `historial_medico`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `medicos` (
-  `MedicoID` int NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(255) NOT NULL,
-  `Apellido` varchar(255) NOT NULL,
-  `Especialidad` varchar(255) DEFAULT NULL,
-  `UsuarioID` int DEFAULT NULL,
+CREATE TABLE `historial_medico` (
+  `HistorialID` int NOT NULL,
+  `PacienteID` int DEFAULT NULL,
+  `DetalleHistorial` text,
+  `FechaHistorial` date DEFAULT NULL,
+  PRIMARY KEY (`HistorialID`),
+  KEY `PacienteID` (`PacienteID`),
+  CONSTRAINT `historial_medico_ibfk_1` FOREIGN KEY (`PacienteID`) REFERENCES `paciente` (`PacienteID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `historial_medico`
+--
+
+LOCK TABLES `historial_medico` WRITE;
+/*!40000 ALTER TABLE `historial_medico` DISABLE KEYS */;
+/*!40000 ALTER TABLE `historial_medico` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `medico`
+--
+
+DROP TABLE IF EXISTS `medico`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `medico` (
+  `MedicoID` int NOT NULL,
+  `Nombre` varchar(50) DEFAULT NULL,
+  `Especialidad` varchar(50) DEFAULT NULL,
+  `SecretarioID` int DEFAULT NULL,
   PRIMARY KEY (`MedicoID`),
-  KEY `UsuarioID` (`UsuarioID`),
-  CONSTRAINT `medicos_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `usuarios` (`UsuarioID`)
+  KEY `SecretarioID` (`SecretarioID`),
+  CONSTRAINT `medico_ibfk_1` FOREIGN KEY (`SecretarioID`) REFERENCES `administrativo` (`SecretarioID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `medicos`
+-- Dumping data for table `medico`
 --
 
-LOCK TABLES `medicos` WRITE;
-/*!40000 ALTER TABLE `medicos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `medicos` ENABLE KEYS */;
+LOCK TABLES `medico` WRITE;
+/*!40000 ALTER TABLE `medico` DISABLE KEYS */;
+/*!40000 ALTER TABLE `medico` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `pacientes`
+-- Table structure for table `paciente`
 --
 
-DROP TABLE IF EXISTS `pacientes`;
+DROP TABLE IF EXISTS `paciente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `pacientes` (
-  `PacienteID` int NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(255) NOT NULL,
-  `Apellido` varchar(255) NOT NULL,
-  `DNI` varchar(20) DEFAULT NULL,
+CREATE TABLE `paciente` (
+  `PacienteID` int NOT NULL,
+  `Nombre` varchar(50) DEFAULT NULL,
+  `Apellido` varchar(50) DEFAULT NULL,
   `FechaNacimiento` date DEFAULT NULL,
+  `Email` varchar(50) DEFAULT NULL,
   `UsuarioID` int DEFAULT NULL,
   PRIMARY KEY (`PacienteID`),
   KEY `UsuarioID` (`UsuarioID`),
-  CONSTRAINT `pacientes_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `usuarios` (`UsuarioID`)
+  CONSTRAINT `paciente_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `usuario` (`UsuarioID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `pacientes`
+-- Dumping data for table `paciente`
 --
 
-LOCK TABLES `pacientes` WRITE;
-/*!40000 ALTER TABLE `pacientes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pacientes` ENABLE KEYS */;
+LOCK TABLES `paciente` WRITE;
+/*!40000 ALTER TABLE `paciente` DISABLE KEYS */;
+/*!40000 ALTER TABLE `paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `recetas`
+-- Table structure for table `usuario`
 --
 
-DROP TABLE IF EXISTS `recetas`;
+DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `recetas` (
-  `RecetaID` int NOT NULL AUTO_INCREMENT,
-  `Descripcion` text,
-  `PacienteID` int DEFAULT NULL,
-  `MedicoID` int DEFAULT NULL,
-  `FechaPrescripcion` date DEFAULT NULL,
-  PRIMARY KEY (`RecetaID`),
-  KEY `PacienteID` (`PacienteID`),
-  KEY `MedicoID` (`MedicoID`),
-  CONSTRAINT `recetas_ibfk_1` FOREIGN KEY (`PacienteID`) REFERENCES `pacientes` (`PacienteID`),
-  CONSTRAINT `recetas_ibfk_2` FOREIGN KEY (`MedicoID`) REFERENCES `medicos` (`MedicoID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `recetas`
---
-
-LOCK TABLES `recetas` WRITE;
-/*!40000 ALTER TABLE `recetas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `recetas` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `usuarios`
---
-
-DROP TABLE IF EXISTS `usuarios`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `usuarios` (
-  `UsuarioID` int NOT NULL AUTO_INCREMENT,
-  `NombreUsuario` varchar(255) NOT NULL,
-  `ContrasenaHash` varchar(255) NOT NULL,
-  `TipoUsuario` enum('paciente','medico','administrativo') NOT NULL,
-  `DatosPersonalesID` int DEFAULT NULL,
+CREATE TABLE `usuario` (
+  `UsuarioID` int NOT NULL,
+  `NombreUsuario` varchar(100) DEFAULT NULL,
+  `ContraseñaUsuario` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`UsuarioID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `usuarios`
+-- Dumping data for table `usuario`
 --
 
-LOCK TABLES `usuarios` WRITE;
-/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -167,4 +193,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-15 20:11:59
+-- Dump completed on 2024-01-19 18:34:22
